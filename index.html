@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of a Cybersecurity & Web Development enthusiast – Informatics student showcasing skills, projects, and experience." />
+  <meta name="keywords" content="cybersecurity, web developer, portfolio, informatics, software engineering" />
+  <meta property="og:title" content="Shofiyatur Rahmatin Nazilah – Portfolio" />
+  <meta property="og:description" content="Cybersecurity Enthusiast | Web Developer | Informatics Student" />
+  <title>Shofiyatur Rahmatin Nazilah – Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("l-6p6PKHSNwfnAwPu");</script>
+</head>
+<body>
+
+  <!-- ─── LOADING SCREEN ─── -->
+ <div id="loader" class="loader" aria-hidden="true">
+  <div class="loader__frame">
+    <div class="loader__corner loader__corner--tl"></div>
+    <div class="loader__corner loader__corner--tr"></div>
+    <div class="loader__corner loader__corner--bl"></div>
+    <div class="loader__corner loader__corner--br"></div>
+
+    <div class="loader__icon">
+      <i class="fas fa-shield-halved"></i>
+    </div>
+
+    <p class="loader__label">INITIALIZING SECURE SESSION</p>
+    <h2 class="loader__title">SRN PORTFOLIO v1.0</h2>
+
+    <div class="loader__terminal">
+      <span class="loader__prompt">&gt;_</span>
+      <span class="loader__terminal-text" id="loaderText">ESTABLISHING CONNECTION...</span>
+    </div>
+
+    <div class="loader__bar-wrap">
+      <div class="loader__bar" id="loaderBar"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ─── SCROLL PROGRESS ─── -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ─── PARTICLE CANVAS ─── -->
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ─── NAVBAR ─── -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__container">
+      <a href="#hero" class="navbar__logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>SRN<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="navbar__menu" id="navMenu" role="navigation" aria-label="Main navigation">
+        <ul class="navbar__list">
+          <li><a href="#about"          class="navbar__link" data-section="about">About</a></li>
+          <li><a href="#skills"         class="navbar__link" data-section="skills">Skills</a></li>
+          <li><a href="#experience"     class="navbar__link" data-section="experience">Experience</a></li>
+          <li><a href="#projects"       class="navbar__link" data-section="projects">Projects</a></li>
+          <li><a href="#certifications" class="navbar__link" data-section="certifications">Certs</a></li>
+          <li><a href="#contact"        class="navbar__link" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section id="hero" class="hero section" aria-label="Hero">
+      <div class="hero__container">
+        <div class="hero__content" data-aos="fade-up" data-aos-duration="800">
+          <h1 class="hero__name">Shofiyatur<br /><span class="gradient-text">Rahmatin</span><br /><span class="hero__name">Nazilah</span></h1>
+
+          <div class="hero__tagline">
+            <span class="tagline-prefix">&gt; </span>
+            <span id="typedTagline"></span>
+          </div>
+
+          <p class="hero__desc">
+            Informatics student with a passion for building secure, functional web applications from full-stack development to security risk management. Currently exploring the intersection of web development and cybersecurity. Open to internships & collaborations.
+          </p>
+
+          <div class="hero__cta">
+            <a href="assets/resume/CV_Shofiyatur_Combined_Harvard_v2.pdf" download class="btn btn--primary">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+            <a href="#contact" class="btn btn--ghost">
+              <i class="fas fa-paper-plane"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="hero__social">
+            <a href="https://github.com/zyra-27"   target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zyraliza" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:shofiyaturrahmatinnazilah@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shofiyazill" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <div class="hero__avatar-wrap">
+            <div class="avatar-ring avatar-ring--1"></div>
+            <div class="avatar-ring avatar-ring--2"></div>
+            <div class="avatar-ring avatar-ring--3"></div>
+            <div class="hero__avatar">
+              <!-- Replace src with your actual photo -->
+              <img src="assets/images/Profile.PNG" alt="Shofiyatur Rahmatin Nazilah profile photo" width="320" height="320" loading="eager" />
+            </div>
+            <div class="hero__badge hero__badge--cyber">
+              <i class="fas fa-shield-halved"></i> Cybersecurity
+            </div>
+            <div class="hero__badge hero__badge--web">
+              <i class="fas fa-code"></i> Web Dev
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+   <!-- ─── ABOUT ─── -->
+<section id="about" class="about section" aria-label="About me">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="about-title">About <span class="gradient-text">Me</span></h2>
+    </div>
+
+    <div class="about__grid">
+
+      <!-- KIRI -->
+      <div class="about__text" data-aos="fade-right" data-aos-delay="100">
+        <p class="about__lead">
+          I'm a third-year Informatics student at President University, currently focused on bridging the gap between cybersecurity thinking and clean, functional web engineering.
+        </p>
+        <p>
+          I thrive in environments where precision meets creativity. Whether it's analysing logs and phishing indicators in a SOC lab, architecting a role-based audit platform with NIST CSF, or fine-tuning a restaurant ordering system at 2 am. I'm equally comfortable in the terminal and the browser.
+        </p>
+        <p>
+          Outside the keyboard, I actively pursue structured cybersecurity training (Google & Digitalent), contribute to team-based tech projects, and chase certifications to stay ahead of the curve.
+        </p>
+
+        <div class="about__edu glass-card">
+          <div class="about__edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <strong>Undergraduate Informatics Student</strong>
+            <span>President University · 2024 – Present</span>
+            <div class="gpa-badge"><i class="fas fa-star"></i> GPA 3.62 / 4.00</div>
+          </div>
+        </div>
+
+        <div class="about__interests">
+          <div class="interest-tag"><i class="fas fa-shield-halved"></i> Cybersecurity</div>
+          <div class="interest-tag"><i class="fas fa-globe"></i> Web Development</div>
+          <div class="interest-tag"><i class="fas fa-microchip"></i> Software Engineering</div>
+          <div class="interest-tag"><i class="fas fa-bug"></i> SOC Analyst</div>
+        </div>
+      </div>
+
+      <!-- KANAN -->
+<div class="about__stats" data-aos="fade-left" data-aos-delay="200">
+  <div class="soft-skills glass-card">
+    <h3>Soft Skills</h3>
+    <ul class="soft-skill-list">
+      <li><i class="fas fa-check-circle"></i> Problem Solving &amp; Analytical Thinking</li>
+      <li><i class="fas fa-check-circle"></i> Team Collaboration &amp; Communication</li>
+      <li><i class="fas fa-check-circle"></i> Attention to Detail</li>
+      <li><i class="fas fa-check-circle"></i> Continuous Learning Mindset</li>
+      <li><i class="fas fa-check-circle"></i> Time Management under Pressure</li>
+      <li><i class="fas fa-check-circle"></i> Adaptability &amp; Quick Onboarding</li>
+    </ul>
+  </div>
+
+  <div class="about__courses glass-card">
+  <div class="about__courses-header">
+    <i class="fas fa-book-open"></i>
+    <strong>Relevant Coursework</strong>
+  </div>
+
+  <p class="courses-category">🔒 Cybersecurity</p>
+  <div class="courses-grid">
+    <div class="course-item">
+      <i class="fas fa-user-secret"></i>
+      <span>Ethical Hacking</span>
+    </div>
+    <div class="course-item">
+      <i class="fas fa-network-wired"></i>
+      <span>Network Security</span>
+    </div>
+    <div class="course-item">
+      <i class="fas fa-magnifying-glass"></i>
+      <span>Digital Forensic</span>
+    </div>
+    <div class="course-item">
+      <i class="fas fa-shield-halved"></i>
+      <span>Security Risk Management & Audit</span>
+    </div>
+  </div>
+
+  <p class="courses-category">🌐 Web Development</p>
+  <div class="courses-grid">
+    <div class="course-item">
+      <i class="fas fa-server"></i>
+      <span>Computer Network</span>
+    </div>
+    <div class="course-item">
+      <i class="fas fa-database"></i>
+      <span>Database System</span>
+    </div>
+    <div class="course-item">
+      <i class="fas fa-code"></i>
+      <span>Software Engineering</span>
+    </div>
+  </div>
+
+</div>
+</section>
+    <!-- ─── SKILLS ─── -->
+    <section id="skills" class="skills section" aria-label="Skills">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="skill-title">My <span class="gradient-text">Skills</span></h2>
+        </div>
+
+        <!-- Cybersecurity -->
+<div class="skills__category" data-aos="fade-up" data-aos-delay="100">
+  <h3 class="skills__cat-title"><i class="fas fa-shield-halved"></i> Cybersecurity</h3>
+  <div class="skills__grid skills__grid--tags">
+    <div class="tech-badge"><i class="fas fa-magnifying-glass-chart" style="color:#8b5cf6"></i> Risk Assessment</div>
+    <div class="tech-badge"><i class="fas fa-user-shield" style="color:#06b6d4"></i> Security Awareness</div>
+    <div class="tech-badge"><i class="fas fa-bug" style="color:#f59e0b"></i> Vulnerability Analysis</div>
+    <div class="tech-badge"><i class="fas fa-building-shield" style="color:#10b981"></i> NIST CSF</div>
+    <div class="tech-badge"><i class="fas fa-fire-extinguisher" style="color:#ef4444"></i> Incident Response</div>
+    <div class="tech-badge"><i class="fas fa-network-wired" style="color:#3a9fff"></i> Network Security</div>
+    <div class="tech-badge"><i class="fas fa-magnifying-glass-chart" style="color:#fcc624"></i>Splunk</div>
+    <div class="tech-badge"><i class="fas fa-terminal" style="color:#777bb4"></i>Nmap</div>
+  </div>
+</div>
+
+        <!-- Programming -->
+        <div class="skills__category" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="skills__cat-title"><i class="fas fa-code"></i> Programming</h3>
+          <div class="skills__grid skills__grid--tags">
+            <div class="tech-badge"><i class="fab fa-html5" style="color:#e34f26"></i> HTML</div>
+            <div class="tech-badge"><i class="fab fa-css3-alt" style="color:#264de4"></i> CSS</div>
+            <div class="tech-badge"><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</div>
+            <div class="tech-badge"><i class="fab fa-php" style="color:#777bb4"></i> PHP</div>
+            <div class="tech-badge"><i class="fab fa-python" style="color:#3572A5"></i> Python</div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skills__category" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="skills__cat-title"><i class="fas fa-database"></i> Database</h3>
+          <div class="skills__grid skills__grid--tags">
+            <div class="tech-badge"><i class="fas fa-database" style="color:#00758f"></i> MySQL</div>
+            <div class="tech-badge"><i class="fas fa-database" style="color:#336791"></i> PostgreSQL</div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skills__category" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="skills__cat-title"><i class="fas fa-wrench"></i> Tools</h3>
+          <div class="skills__grid skills__grid--tags">
+            <div class="tech-badge"><i class="fab fa-git-alt" style="color:#f05032"></i> Git</div>
+            <div class="tech-badge"><i class="fab fa-github"></i> GitHub</div>
+            <div class="tech-badge"><i class="fab fa-linux" style="color:#fcc624"></i> Linux</div>
+            <div class="tech-badge"><i class="fas fa-wifi" style="color:#06b6d4"></i> Wireshark</div>
+            <div class="tech-badge"><i class="fas fa-network-wired" style="color:#1ba0d7"></i> </div>
+            <div class="tech-badge"><i class="fas fa-code" style="color:#007acc"></i> VS Code</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section id="experience" class="activity experience section" aria-label="Experience">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="experience-title">Experi<span class="gradient-text">ence</span></h2>
+    </div>
+
+    <div class="activity-list">
+
+      <!-- HRD PURTC -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">Sep 2025 – Present</span>
+            <h3>Human Resource Development</h3>
+            <p class="activity-card__org">President University Robotic and Technology Club (PURTC)</p>
+          </div>
+          <span class="activity-card__badge badge--academic">Organization</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Managed recruitment and onboarding for new club members.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Handled administrative documentation and member data management.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Collaborated with the technical committee in planning club activities.</span></div>
+        </div>
+      </div>
+
+      <!-- Google Skills Boost -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">Nov 2025 – Jan 2026</span>
+            <h3>Cybersecurity Hands-on Labs & Training</h3>
+            <p class="activity-card__org">Google Skills Boost</p>
+          </div>
+          <span class="activity-card__badge badge--cyber">Cybersecurity</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Completed labs on network security, malware & phishing analysis.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Practiced Linux command-line operations and SQL-based log filtering.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Achieved assessment scores up to 100%.</span></div>
+        </div>
+      </div>
+
+      <!-- Staff Call Center -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">Nov 2025 – Feb 2026</span>
+            <h3>Staff, Call Center</h3>
+            <p class="activity-card__org">President University, Cikarang Utara</p>
+          </div>
+          <span class="activity-card__badge badge--web">Part-Time</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Collected and validated prospective student data from high school marketing sessions.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Conducted structured follow-up calls to confirm enrollment status.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Followed up on outstanding registration fees.</span></div>
+        </div>
+      </div>
+
+      <!-- Data Analyst Bootcamp -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">Jun – Jul 2025</span>
+            <h3>Data Analyst Intensive Bootcamp</h3>
+            <p class="activity-card__org">MySkill (PT Linimuda Inspirasi Negeri)</p>
+          </div>
+          <span class="activity-card__badge badge--web">Bootcamp</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Mastered SQL for data analysis and business insights.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Built data visualizations using Python libraries.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Practiced data formatting and validation techniques.</span></div>
+        </div>
+      </div>
+
+      <!-- Setsail Founders Weekend -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">Feb 2025</span>
+            <h3>Participant – Setsail Founders Weekend</h3>
+            <p class="activity-card__org">Setsail</p>
+          </div>
+          <span class="activity-card__badge badge--academic">Event</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Developed problem-solving and ideation skills in a startup environment.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Collaborated in team-based innovation challenges.</span></div>
+        </div>
+      </div>
+
+      <!-- National Cybersecurity Connect -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">2024</span>
+            <h3>National Cybersecurity Connect 2024</h3>
+            <p class="activity-card__org">APTIKNAS & PT Naganaya Indonesia</p>
+          </div>
+          <span class="activity-card__badge badge--cyber">Event</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Gained exposure to latest cybersecurity trends and threats in Indonesia.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Connected with industry professionals and cybersecurity leaders.</span></div>
+        </div>
+      </div>
+
+      <!-- Pelatihan Semikonduktor ARM -->
+      <div class="activity-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="activity-card__corner activity-card__corner--tl"></div>
+        <div class="activity-card__corner activity-card__corner--br"></div>
+        <div class="activity-card__header">
+          <div class="activity-card__left">
+            <span class="activity-card__date">2024</span>
+            <h3>Pelatihan Semikonduktor bersama ARM</h3>
+            <p class="activity-card__org">Danantara Indonesia</p>
+          </div>
+          <span class="activity-card__badge badge--network">Event</span>
+        </div>
+        <hr class="activity-card__divider"/>
+        <p class="activity-card__outcomes-label">Delivered Outcomes and Impacts:</p>
+        <div class="activity-card__outcomes">
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Attended semiconductor and embedded systems training with ARM.</span></div>
+          <div class="outcome-item"><i class="fas fa-arrow-right"></i><span>Part of national digital talent development initiative for Indonesian students.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- ─── PROJECTS ─── -->
+    <section id="projects" class="projects section" aria-label="Projects">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="project-title">Featured <span class="gradient-text">Projects</span></h2>
+        </div>
+
+        <div class="projects__grid">
+
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card__img">
+              <img src="https://placehold.co/600x340/1e293b/8b5cf6?text=Security+Risk+Platform&font=syne" alt="Security Risk Management Platform" loading="lazy" />
+              <div class="project-card__overlay">
+
+                <a href="https://github.com/al-artech/SRM-AUDIT" class="btn btn--sm btn--ghost"    target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag tag--cyber">Cybersecurity</span>
+                <span class="tag tag--featured">Featured</span>
+              </div>
+              <h3>Security Risk Management Platform</h3>
+              <p>A full-stack web platform built around the NIST Cybersecurity Framework. Enables organizations to assess, track, and respond to security risks through an intuitive dashboard.</p>
+              <div class="project-card__tech">
+                <span>PHP</span><span>MySQL</span><span>NIST CSF</span><span>Chart.js</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-card__img">
+              <img src="assets\images\preslingo.png" alt="" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://github.com/keyy9/PresLingo-update" class="btn btn--sm btn--ghost"    target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag tag--web">Web Dev</span>
+              </div>
+              <h3>Web Based Application For Studying Mandarin</h3>
+              <p>A responsive inventory management web app with real-time stock tracking, CRUD operations, PDF report generation, and role-based authentication.</p>
+              <div class="project-card__tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card__img">
+              <img src="assets\images\robotics.jpeg" alt="" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://www.instagram.com/harmonytech_18" class="btn btn--sm btn--ghost"    target="_blank" rel="noopener"><i class="fab fa-instagram"></i>Exhibition</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag tag--network">IoT</span>
+              </div>
+              <h3>Smart Waste Management System</h3>
+              <p>We are building a Tank-Based Robot with a Smart Waste System.It can be controlled manually or move automatically by following a line. The robot has an arm to pick up smart trash bins.Each bin can open/close automatically, detect when it's full, and send its location to the main computer for quick pickup.This project makes waste collection smarter and more efficient.</p>
+              <div class="project-card__tech">
+                <span>Robotics</span><span>Microcontroller</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="project-card__img">
+              <img src="assets\images\Seoullicious.png" alt="" loading="lazy" />
+              <div class="project-card__overlay">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+                <div style="display:flex; gap:10px;">
+                <a href="https://seoullicious.rf.gd/seoullicious/auth/login.php" class="btn btn--sm btn--primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Website</a>
+              </div>
+                <a href="https://github.com/zyra-27/Seullicious" class="btn btn--sm btn--ghost"    target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag tag--web">Web Dev</span>
+              </div>
+              <h3>Web Based Application Ordering System</h3>
+              <p>This very website! A modern web based application order system that can help the admin to recap and user to order for dine in or take away with vanilla HTML, CSS, and JavaScript. Features particle animations, glassmorphism, and fully responsive layout.</p>
+              <div class="project-card__tech">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>AOS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-card__img">
+              <img src="assets\images\Lab NS.png" alt="" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://github.com/zyra-27/Network-Security-Lab" class="btn btn--sm btn--ghost"    target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag tag--web">Mini Lab</span>
+              </div>
+              <h3>Network Security Lab</h3>
+              <p>About Hands-on labs covering network reconnaissance, attack simulation, traffic analysis, and firewall hardening using nmap, tcpdump, iptraf, hping3, and iptables on Linux.</p>
+              <div class="project-card__tech">
+                <span>Linux</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CERTIFICATIONS ─── -->
+<section class="skill-map">
+
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="certifications-title">Trai<span class="gradient-text">ning</span></h2>
+    </div>
+
+    <div class="layout">
+
+      <!-- LEFT: Mind Map -->
+      <div class="map-panel">
+        <canvas id="cv"></canvas>
+
+        <!-- L1 -->
+        <div class="node l1" id="n-training" data-id="training">Training</div>
+
+        <!-- L2 -->
+        <div class="node l2" id="n-google"  data-id="google">Google Cybersecurity</div>
+        <div class="node l2" id="n-data"    data-id="data">Data Analyst</div>
+        <div class="node l2" id="n-fga"     data-id="fga">Cybersecurity FGA</div>
+
+        <!-- L3 Google -->
+        <div class="node l3" id="n-g1" data-id="g1">Foundations of Cybersecurity</div>
+        <div class="node l3" id="n-g2" data-id="g2">Play It Safe: Manage Security Risk</div>
+        <div class="node l3" id="n-g3" data-id="g3">Connect &amp; Protect: Networks</div>
+        <div class="node l3" id="n-g4" data-id="g4">Tools of the Trade: Linux &amp; SQL</div>
+        <div class="node l3" id="n-g5" data-id="g5">Automate Tasks with Python</div>
+
+        <!-- L3 FGA -->
+        <div class="node l3" id="n-f1" data-id="f1">Intermediate</div>
+        <div class="node l3" id="n-f2" data-id="f2">Fundamental</div>
+      </div>
+
+      <!-- RIGHT: Detail Panel -->
+      <div class="detail-panel" id="detail-panel">
+        <div class="detail-empty" id="detail-empty">
+          <p>Klik node untuk melihat detail course</p>
+        </div>
+        <div class="detail-content" id="detail-content" style="display:none">
+          <div class="detail-category" id="d-category"></div>
+          <h2 class="detail-title" id="d-title"></h2>
+          <p class="detail-desc" id="d-desc"></p>
+          <div class="detail-tags" id="d-tags"></div>
+          <button class="btn-cert" id="btn-cert" onclick="openCert()">View Certificate</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Certificate Modal -->
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('active')">✕</button>
+      <iframe id="cert-frame" src="" title="Certificate"></iframe>
+    </div>
+  </div>
+
+  <script src="js/mindmap.js"></script>
+</section>
+ <!-- ─── ACHIEVEMENTS ─── -->
+<section id="achievements" class="achievements section" aria-label="Achievements">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="achievement-title">Achieve<span class="gradient-text">ments</span></h2>
+    </div>
+
+    <div class="stats__grid">
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-card__icon"><i class="fas fa-star"></i></div>
+        <div class="stat-card__number counter" data-target="363" data-decimal="true">3.63</div>
+        <div class="stat-card__label">GPA Score</div>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="stat-card__icon"><i class="fas fa-folder-open"></i></div>
+        <div class="stat-card__number counter" data-target="5">5</div>
+        <div class="stat-card__label">Projects Completed</div>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-card__icon"><i class="fas fa-certificate"></i></div>
+        <div class="stat-card__number counter" data-target="8">8</div>
+        <div class="stat-card__label">Certifications</div>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="stat-card__icon"><i class="fas fa-clock"></i></div>
+        <div class="stat-card__number counter" data-target="225">225</div>
+        <div class="stat-card__label">Training Hours</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" class="contact section" aria-label="Contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="contact-title">Get In <span class="gradient-text">Touch</span></h2>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__info" data-aos="fade-right" data-aos-delay="100">
+            <p class="contact__lead">
+              I'm open to <strong>internship opportunities</strong>, Reach out I typically reply within 24 hours!
+            </p>
+
+            <div class="contact__links">
+              <a href="mailto:shofiyaturrahmatinnazilah@gmail.com" class="contact-link glass-card">
+                <div class="contact-link__icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <strong>Email</strong>
+                  <span>shofiyaturrahmatinnazilah@gmail.com</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/zyraliza" target="_blank" rel="noopener" class="contact-link glass-card">
+                <div class="contact-link__icon" style="background:linear-gradient(135deg,#0077b5,#005885)"><i class="fab fa-linkedin"></i></div>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <span>linkedin.com/in/zyraliza</span>
+                </div>
+              </a>
+              <a href="https://github.com/zyra-27" target="_blank" rel="noopener" class="contact-link glass-card">
+                <div class="contact-link__icon" style="background:linear-gradient(135deg,#333,#111)"><i class="fab fa-github"></i></div>
+                <div>
+                  <strong>GitHub</strong>
+                  <span>github.com/zyra-27</span>
+                </div>
+              </a>
+              <a href="https://www.instagram.com/shofiyazill" target="_blank" rel="noopener" class="contact-link glass-card">
+                <div class="contact-link__icon" style="background:linear-gradient(135deg,#e1306c,#833ab4)"><i class="fab fa-instagram"></i></div>
+                <div>
+                  <strong>Instagram</strong>
+                  <span>@shofiyazill</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact__form glass-card" id="contactForm" novalidate data-aos="fade-left" data-aos-delay="200" aria-label="Contact form">
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" name="name" placeholder="Your full name" autocomplete="name" required />
+              <span class="form-error" id="nameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" autocomplete="email" required />
+              <span class="form-error" id="emailError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactMsg">Message</label>
+              <textarea id="contactMsg" name="message" placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
+              <span class="form-error" id="msgError" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__logo">
+        <span class="logo-bracket">&lt;</span>SRN<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer__copy">© 2026 Shofiyatur Rahmatin Nazilah. Crafted with <i class="fas fa-heart" style="color:#ef4444"></i> &amp; lots of ☕</p>
+      <div class="footer__social">
+        <a href="https://github.com/zyra-27"    target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/zyraliza"  target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:shofiyaturrahmatinnazilah@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/shofiyazill" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── BACK TO TOP ─── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ─── FLOATING SOCIAL BAR ─── -->
+  <div class="floating-social" aria-label="Social links">
+    <a href="https://github.com/zyra-27" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/zyraliza" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/shofiyazill" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <!-- External JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
