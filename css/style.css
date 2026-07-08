@@ -44,6 +44,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--navbar-h);
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -1362,6 +1363,20 @@ background-position: 0 0, 30px 30px;
   grid-template-columns: 1fr 380px;
   gap: 20px;
   height: 580px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 20px;
+  }
+  .map-panel {
+    height: 420px;
+  }
+  .detail-panel {
+    min-height: 260px;
+  }
 }
 
 /* ── Map Panel ── */
