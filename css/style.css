@@ -531,10 +531,13 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   font-weight: 800;
   line-height: 1.05;
   margin-bottom: 1rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
-
+@media (max-width: 500px) {
+  .hero__name {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
 .hero__tagline {
   font-family: var(--font-mono);
   font-size: 1.05rem;
