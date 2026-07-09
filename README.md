@@ -1,31 +1,6 @@
-# Alex Ramadhan — Personal Portfolio 🚀
+# Shofiyatur Rahmatin Nazilah — Personal Portfolio 🚀
 
 Modern, responsive, dark-themed personal portfolio for an Informatics student specializing in Cybersecurity, Web Development, and Software Engineering.
-
----
-
-## 📁 Struktur Folder
-
-```
-portfolio/
-├── index.html              ← Halaman utama (semua section)
-├── css/
-│   └── style.css           ← Seluruh styling, CSS Variables, responsive
-├── js/
-│   └── script.js           ← Semua interaktivitas JS
-├── assets/
-│   ├── images/
-│   │   ├── profile.jpg     ← ⚠ Ganti dengan foto profil kamu
-│   │   ├── project-1.jpg   ← Screenshot project 1
-│   │   ├── project-2.jpg   ← Screenshot project 2
-│   │   ├── project-3.jpg   ← Screenshot project 3
-│   │   └── project-4.jpg   ← Screenshot project 4
-│   └── resume/
-│       └── cv-alex-ramadhan.pdf  ← ⚠ Ganti dengan CV kamu
-└── README.md
-```
-
----
 
 ## 🚀 Cara Menjalankan
 
@@ -46,42 +21,6 @@ cd portfolio
 python -m http.server 8080
 # buka http://localhost:8080
 ```
-
----
-
-## ✏️ Kustomisasi
-
-### Ganti Informasi Pribadi
-Cari dan ganti teks berikut di `index.html`:
-
-| Placeholder          | Ganti dengan             |
-|----------------------|--------------------------|
-| `Alex Ramadhan`      | Nama lengkap kamu        |
-| `alex@email.com`     | Email kamu               |
-| `alexramadhan`       | Username GitHub/IG kamu  |
-| `Universitas Negeri` | Nama universitasmu       |
-| `3.82`               | IPK kamu                 |
-
-### Foto Profil
-```html
-<!-- Di hero section, ganti src: -->
-<img src="assets/images/profile.jpg" alt="Nama kamu" />
-```
-
-### Warna Utama
-Edit CSS Variables di `css/style.css` bagian `:root`:
-```css
-:root {
-  --primary:  #8b5cf6;   /* ubah warna utama */
-  --accent:   #06b6d4;   /* ubah warna aksen */
-}
-```
-
-### Tambah/Hapus Project
-Copy satu blok `<article class="project-card">` di section `#projects`, lalu edit isinya.
-
-### Tambah Skill
-Copy satu `<div class="tech-badge">` di section skills, edit ikon dan teks.
 
 ---
 
