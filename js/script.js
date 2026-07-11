@@ -7,34 +7,18 @@
 
 /* ─── 1. LOADER ─── */
 window.addEventListener('load', () => {
-  const loader   = document.getElementById('loader');
-  const bar      = document.getElementById('loaderBar');
-  const termText = document.getElementById('loaderText');
-
-  const messages = [
-    'ESTABLISHING CONNECTION...',
-    'VERIFYING CREDENTIALS...',
-    'LOADING PORTFOLIO DATA...',
-    'HANDSHAKE CONFIRMED // WELCOME',
-  ];
+  const loader = document.getElementById('loader');
+  const bar    = document.getElementById('loaderBar');
 
   let progress = 0;
-  let msgIndex = 0;
-
   const interval = setInterval(() => {
     progress += Math.random() * 15;
     if (progress > 100) progress = 100;
     bar.style.width = `${progress}%`;
 
-    const newIndex = Math.floor((progress / 100) * messages.length);
-    if (newIndex !== msgIndex && newIndex < messages.length) {
-      msgIndex = newIndex;
-      termText.textContent = messages[msgIndex];
-    }
-
     if (progress >= 100) {
       clearInterval(interval);
-      setTimeout(() => loader.classList.add('hidden'), 600);
+      setTimeout(() => loader.classList.add('hidden'), 400);
     }
   }, 120);
 });
@@ -112,44 +96,9 @@ new Typed('#typedTagline', {
   }, { passive: true });
 })();
 
-/* ─── 6. CUSTOM CURSOR ─── */
-(function initCursor() {
-  const cursor   = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
-  if (!cursor || !follower) return;
-
-  let mx = 0, my = 0;
-  let fx = 0, fy = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    cursor.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`;
-  });
-
-  const animateFollower = () => {
-    fx += (mx - fx) * 0.12;
-    fy += (my - fy) * 0.12;
-    follower.style.transform = `translate(${fx}px, ${fy}px) translate(-50%,-50%)`;
-    requestAnimationFrame(animateFollower);
-  };
-  animateFollower();
-
-  /* Expand on interactive elements — tambah .cert-stack dan .cert-stack__card */
-  const hoverables = document.querySelectorAll('a, button, .skill-card, .project-card, .cert-stack, .cert-stack__card');
-  hoverables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      follower.style.width      = '58px';
-      follower.style.height     = '58px';
-      follower.style.borderColor = 'rgba(139,92,246,0.8)';
-    });
-    el.addEventListener('mouseleave', () => {
-      follower.style.width      = '36px';
-      follower.style.height     = '36px';
-      follower.style.borderColor = 'rgba(139,92,246,0.5)';
-    });
-  });
-})();
+/* ─── 6. CUSTOM CURSOR ───
+   Removed along with the CSS — the cursor/follower elements are
+   permanently hidden now, so this loop would just run for nothing. */
 
 /* ─── 7. DARK / LIGHT THEME TOGGLE ─── */
 (function initTheme() {
@@ -319,92 +268,10 @@ new Typed('#typedTagline', {
   });
   })();
 
-/* ─── 12. PARTICLE CANVAS ─── */
-(function initParticles() {
-  const canvas = document.getElementById('particleCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let particles = [];
-  let animId;
-
-  const resize = () => {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  };
-
-  window.addEventListener('resize', resize, { passive: true });
-  resize();
-
-  const isDark = () => document.documentElement.getAttribute('data-theme') !== 'light';
-
-  class Particle {
-    constructor() { this.reset(); }
-
-    reset() {
-      this.x     = Math.random() * canvas.width;
-      this.y     = Math.random() * canvas.height;
-      this.r     = Math.random() * 1.8 + 0.4;
-      this.vx    = (Math.random() - 0.5) * 0.25;
-      this.vy    = (Math.random() - 0.5) * 0.25;
-      this.alpha = Math.random() * 0.5 + 0.1;
-      this.color = Math.random() > 0.5 ? '139,92,246' : '6,182,212';
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color},${isDark() ? this.alpha : this.alpha * 0.4})`;
-      ctx.fill();
-    }
-  }
-
-  const drawConnections = () => {
-    const limit = 120;
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx   = particles[i].x - particles[j].x;
-        const dy   = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < limit) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(139,92,246,${(1 - dist / limit) * 0.08})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-  };
-
-  const initParticleArray = () => {
-    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 80);
-    particles = Array.from({ length: count }, () => new Particle());
-  };
-
-  const loop = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    drawConnections();
-    animId = requestAnimationFrame(loop);
-  };
-
-  initParticleArray();
-  loop();
-
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(animId);
-    initParticleArray();
-    loop();
-  }, { passive: true });
-})();
+/* ─── 12. PARTICLE CANVAS ───
+   Removed along with the CSS. The canvas is hidden now, but this loop
+   was still simulating ~80 particles and their connections every
+   frame for nothing — no reason to keep paying that cost. */
 
 /* ─── 13. SMOOTH SCROLL for anchor links ─── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

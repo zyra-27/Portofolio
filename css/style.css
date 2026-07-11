@@ -5,29 +5,29 @@
 
 /* ─── CSS VARIABLES ─── */
 :root {
-  --bg-primary:    #000000;
-  --bg-secondary:  #0a0a0a;
-  --bg-card:       rgba(10, 10, 10, 0.8);
-  --primary:       #8b5cf6;
-  --primary-light: #a78bfa;
-  --secondary:     #6d28d9;
-  --accent:        #d946ef;
-  --accent-warm:   #f59e0b;
-  --success:       #10b981;
-  --danger:        #ef4444;
+  --bg-primary:    #111014;
+  --bg-secondary:  #17161b;
+  --bg-card:       #1b1a1f;
+  --primary:       #c9a04d;
+  --primary-light: #ddb96a;
+  --secondary:     #8a6a2f;
+  --accent:        #7a8471;
+  --accent-warm:   #c9a04d;
+  --success:       #7a9b76;
+  --danger:        #b5594a;
 
-  --text-primary:  #e2e8f0;
-  --text-secondary:#94a3b8;
-  --text-muted:    #475569;
+  --text-primary:  #ece7dd;
+  --text-secondary:#9a9490;
+  --text-muted:    #605c58;
 
-  --border:        rgba(139, 92, 246, 0.15);
-  --glass-bg:      rgba(10, 10, 10, 0.7);
-  --glass-border:  rgba(139, 92, 246, 0.2);
-  --glass-shadow:  0 8px 32px rgba(0, 0, 0, 0.6);
+  --border:        rgba(201, 160, 77, 0.18);
+  --glass-bg:      #1b1a1f;
+  --glass-border:  rgba(201, 160, 77, 0.16);
+  --glass-shadow:  0 6px 24px rgba(0, 0, 0, 0.4);
 
-  --font-display: 'Syne', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
+  --font-display: 'Fraunces', serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
 
   --section-py:    5rem;
   --container-max: 1200px;
@@ -82,18 +82,14 @@ input, textarea { font-family: inherit; }
 .section { padding: var(--section-py) 0; position: relative; }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 .glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--glass-card, var(--bg-card));
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
+  border-left: 2px solid var(--primary);
+  border-radius: 4px;
   box-shadow: var(--glass-shadow);
 }
 
@@ -113,25 +109,23 @@ input, textarea { font-family: inherit; }
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+  background: var(--primary);
+  color: #17161b;
+  border-radius: 2px;
 }
 .btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+  background: var(--primary-light);
 }
 
 .btn--ghost {
   background: transparent;
   color: var(--text-primary);
-  border: 1.5px solid var(--glass-border);
+  border: 1.5px solid var(--text-muted);
+  border-radius: 2px;
 }
 .btn--ghost:hover {
   border-color: var(--primary);
   color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
 }
 
 .btn--sm { padding: 0.5rem 1.1rem; font-size: 0.8rem; }
@@ -144,17 +138,15 @@ input, textarea { font-family: inherit; }
 }
 
 .section-label {
-  display: inline-block;
+  display: block;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 0.6rem;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid rgba(217, 70, 239, 0.3);
-  border-radius: 100px;
-  background: rgba(217, 70, 239, 0.05);
+  margin-bottom: 0.75rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--primary);
 }
 
 .hero-title,
@@ -172,45 +164,20 @@ input, textarea { font-family: inherit; }
 .hero-title,
 .skill-title,
 .experience-title,
-.contact-title, 
-.achievement-title {
-    font-family: 'Montserrat', sans-serif;
-}
-
+.contact-title,
+.achievement-title,
 .about-title,
 .project-title,
 .certifications-title {
-    font-family: 'League Gothic', sans-serif;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 /* ─── CUSTOM CURSOR ─── */
+/* Custom cursor removed — it's one of the clearest "AI template" tells
+   and adds friction without adding meaning. Native cursor used instead. */
 .cursor,
-.cursor-follower {
-  pointer-events: none;
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 9999;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
-}
-
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--primary);
-  transition: transform 0.05s linear, width 0.2s, height 0.2s;
-}
-
-.cursor-follower {
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(139, 92, 246, 0.5);
-  transition: transform 0.12s ease, width 0.3s, height 0.3s, border-color 0.3s;
-}
-
-body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
-
-@media (max-width: 768px) {
-  .cursor, .cursor-follower { display: none; }
-}
+.cursor-follower { display: none !important; }
 
 /* ─── SCROLL PROGRESS ─── */
 .scroll-progress {
@@ -224,14 +191,8 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
 }
 
 /* ─── PARTICLE CANVAS ─── */
-.particle-canvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.4;
-}
+/* Particle canvas removed — generic "techy" background noise, disabled here. */
+.particle-canvas { display: none !important; }
 
 /* ─── LOADER ─── */
 .loader {
@@ -252,92 +213,50 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
 
 .loader__frame {
   position: relative;
-  width: 420px;
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  padding: 2.5rem 2rem;
+  width: 320px;
+  padding: 0;
   text-align: center;
-  background: rgba(139, 92, 246, 0.03);
+  background: transparent;
 }
 
-/* Corner brackets */
-.loader__corner {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-}
-.loader__corner--tl { top: -1px; left: -1px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
-.loader__corner--tr { top: -1px; right: -1px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
-.loader__corner--bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
-.loader__corner--br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+/* Corner brackets removed — the "hacker terminal" motif read as a costume
+   rather than a real signal of cybersecurity work. */
+.loader__corner { display: none; }
 
 .loader__icon {
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-  animation: loader-pulse 1.5s ease-in-out infinite;
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  opacity: 0.9;
 }
 
-@keyframes loader-pulse {
-  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px var(--accent)); }
-  50%       { opacity: 0.4; filter: drop-shadow(0 0 2px var(--accent)); }
-}
-
-.loader__label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
+.loader__label { display: none; }
 
 .loader__title {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  text-transform: none;
   margin-bottom: 1.5rem;
 }
 
-.loader__terminal {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  padding: 0.6rem 1rem;
-  text-align: left;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.loader__prompt {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-.loader__terminal-text {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-}
+.loader__terminal { display: none; }
+.loader__prompt { display: none; }
+.loader__terminal-text { display: none; }
 
 .loader__bar-wrap {
   width: 100%;
-  height: 3px;
-  background: rgba(139, 92, 246, 0.15);
-  border-radius: 0;
+  height: 2px;
+  background: var(--glass-border);
   overflow: hidden;
 }
 
 .loader__bar {
   height: 100%;
   width: 0%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+  background: var(--primary);
   transition: width 0.1s linear;
 }
 
@@ -372,10 +291,7 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 .logo-bracket { color: var(--accent); -webkit-text-fill-color: var(--accent); }
@@ -1618,10 +1534,7 @@ canvas {
 
 .stat-card__icon {
   font-size: 2rem;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
   margin-bottom: 0.75rem;
 }
 
@@ -1629,10 +1542,7 @@ canvas {
   font-family: var(--font-display);
   font-size: 2.8rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -1803,10 +1713,7 @@ canvas {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 .footer__copy {
